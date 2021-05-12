@@ -2,7 +2,7 @@ import React from 'react';
 import './ExpenseItem.css'
 
 import ExpenseDate from './ExpenseDate';
-import Card from './Card';
+import Card from '../UI/Card';
 
 const ExpenseItem = (props) => { // this name props can be anything like date,data,expences etc but i prefer props
     return (
