@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
+import React ,{useState} from 'react';
 import './ExpenseForm.css';
 
 const ExpenseForm = (props) => {
 
     //Multiple States
-    const [enteredTitle, setEnteredTitle] = useState('');
-    const [enteredAmount, setEnteredAmount] = useState('');
-    const [enteredDate, setEnteredDate] = useState('');
+    const [enteredTitle,setEnteredTitle] = useState('');
+    const [enteredAmount,setEnteredAmount] = useState('');
+    const [enteredDate,setEnteredDate] = useState('');
     //(or)
     //Single State instead of multiple states not recommended
     // const [userInput, setUserInput] = useState({
@@ -48,11 +48,11 @@ const ExpenseForm = (props) => {
     const submitHandler = (event) => {
         event.preventDefault();
         const expenseData = {
-            title: enteredTitle,
-            amount: +enteredAmount,
-            date: new Date(enteredDate)
+            title : enteredTitle,
+            amount : enteredAmount,
+            date : new Date(enteredDate)
         };
-
+        
         props.onSaveExpenseData(expenseData);
         setEnteredTitle('');
         setEnteredAmount('');
@@ -64,23 +64,22 @@ const ExpenseForm = (props) => {
             <div className="new-expense__controls">
                 <div className="new-expense__control">
                     <label>Title</label>
-                    <input type="text" onChange={titleChangeHandler} value={enteredTitle} />
+                    <input type="text" onChange = {titleChangeHandler} value={enteredTitle} />
                 </div>
                 <div className="new-expense__control">
                     <label>amount</label>
-                    <input type="number" min="0.01" step="0.01" onChange={amountChangeHandler} value={enteredAmount} />
+                    <input type="number" min="0.01" step="0.01" onChange = {amountChangeHandler} value={enteredAmount} />
                 </div>
                 <div className="new-expense__control">
                     <label>Date</label>
-                    <input type="date" min="2019-01-01" max="2022-12-31" onChange={dateChangeHandler} value={enteredDate} />
+                    <input type="date" min="2019-01-01" max="2022-12-31" onChange = {dateChangeHandler}  value={enteredDate}/>
                 </div>
-                <div className='new-expense__actions'>
-                    <button type="button" onClick={props.onCancel}>Cancel</button>
-                    <button type='submit'>Add Expense</button>
+                <div className="new-expense__actions">
+                    <button type="submit">Add Expense</button>
                 </div>
             </div>
         </form>
-    );
+        );
 };
 
 export default ExpenseForm;
