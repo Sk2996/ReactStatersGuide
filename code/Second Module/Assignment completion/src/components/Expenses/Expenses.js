@@ -18,7 +18,7 @@ const Expenses = (props) => {
   return (
     <div>
       <Card className='expenses'>
-        <ExpensesFilter defaultYear={filteredYear}  onChangeFilter = {filterChangeHandler}/> {/** This is a controlled component as most of the functionality is done in this*/}
+        <ExpensesFilter defaultYear={filteredYear}  onChangeFilter = {filterChangeHandler}/>
         <ExpenseItem
           title={props.expenses[0].title}
           amount={props.expenses[0].amount}
